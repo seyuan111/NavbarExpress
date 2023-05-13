@@ -4,10 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container{
+            min-height: 50vh;
+            padding: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .searchbar{
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            border-radius: 60px;
+            padding: 10px 20px;
+        }
+
+        .searchbar input{
+            flex: 1;
+            border: 2px solid black;
+            padding: 15px 10px;
+            font-size: 15px;
+            border-radius: 20px;
+        }
+
+        .searchbar button img{
+            width: 25px;
+        }
+        .searchbar button{
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+        }
+    </style>
     <title>Home</title>
 </head>
 <body>
     <%- include(navbar) %> <!-- Include the navbar template -->
     <h1>Welcome to FriendZ</h1>
+
+    <button onclick="getlocation()">Location</button>
+
+    <div class="container">
+        <form action="" class="searchbar">
+            <input type="text" placeholder="search friends" name="name">
+            <button type="submit"><img src="https://www.citypng.com/public/uploads/preview/download-blue-search-icon-button-png-11640084027s0fkuhz2lb.png"></button>
+        </form>
+    </div>
+
+    <script>
+        const getlocation = () => {
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition((position) => {
+                    let lat = position.coords.latitude;
+                    let long = position.coords.longitude;
+                    console.log(lat, long)
+                })
+            }
+            else{
+                alert("Location not available")
+            }
+        }
+    </script>
 </body>
 </html>
