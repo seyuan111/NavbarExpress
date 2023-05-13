@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10vh;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo{
+    margin-left: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo a{
+    list-style: none;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.lists{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    font-size: 20px;
+    text-decoration: none;
+    list-style: none;
+    align-items: center;
+}
+
+.lists a{
+    color: white;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+}
+
+button{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: lightblue;
+    color: green;
+    font-size: 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.swiper{
+    width: 80%;
+    height: fit-content;
+}
+
+.swiper-slide img{
+    width: 100%;
+}
+    </style>
+    <title>Sliders</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/"><p>(logo)</p></a>
+        </div>
+        <ul class="lists">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/sliders">Sliders</a></li>
+          <button><a href="/signup">Signup</a></button>
+        </ul>
+    </nav>
+    <h1>Sliders</h1>
+    <div class="container">
+        <div class="swiper">
+            
+            <div class="swiper-wrapper">
+              
+              <div class="swiper-slide"><img src="https://st2.depositphotos.com/1277743/5804/v/950/depositphotos_58044913-stock-illustration-friends-icon-design.jpg"></div>
+              <div class="swiper-slide"><img src="https://cdn2.vectorstock.com/i/thumb-large/63/51/happy-three-friends-line-style-logo-vector-20626351.jpg"></div>
+              <div class="swiper-slide"><img src="https://img.freepik.com/free-vector/hand-drawn-friends-logo-design_23-2149577868.jpg?w=2000"></div>
+              
+            </div>
+            
+            <div class="swiper-pagination"></div>
+            
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+  loop: true,
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+    </script>
+</body>
+</html>
